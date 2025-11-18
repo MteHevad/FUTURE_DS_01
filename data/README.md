@@ -1,4 +1,4 @@
-# 📁 Data Folder — 2009–2010 Sales Dataset
+# 📁 Data Folder : 2009–2010 Sales Dataset
 
 This folder contains datasets used in the **Business Sales Dashboard (2009–2010)** project.
 

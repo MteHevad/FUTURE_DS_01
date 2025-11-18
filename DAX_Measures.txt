@@ -1,0 +1,62 @@
+=======================================
+DAX MEASURES — 2009–2010 SALES DASHBOARD
+=======================================
+
+-- Total Revenue
+Total Revenue = SUM('Sales'[TotalSales])
+
+-- Total Invoices
+Total Invoices = DISTINCTCOUNT('Sales'[Invoice])
+
+-- Total Customers
+Total Customers = DISTINCTCOUNT('Sales'[Customer ID])
+
+-- Average Order Value (AOV)
+Average Order Value = DIVIDE([Total Revenue], [Total Invoices])
+
+-- Total Quantity Sold
+Total Quantity Sold = SUM('Sales'[Quantity])
+
+-- Monthly Revenue
+Monthly Revenue = 
+ CALCULATE(
+    [Total Revenue],
+    ALLEXCEPT('Sales', 'Sales'[Year], 'Sales'[MonthNumber])
+ )
+
+-- Revenue by Country
+Revenue by Country = SUM('Sales'[TotalSales])
+
+-- Revenue by Product
+Revenue by Product = SUM('Sales'[TotalSales])
+
+-- Year-over-Year Growth (optional)
+YoY Growth = 
+VAR CurrentYear = SELECTEDVALUE('Sales'[Year])
+VAR PreviousYear = CurrentYear - 1
+VAR CurrentRev = [Total Revenue]
+VAR PrevRev =
+    CALCULATE(
+        [Total Revenue],
+        'Sales'[Year] = PreviousYear
+    )
+RETURN
+DIVIDE(CurrentRev - PrevRev, PrevRev)
+
+-- Customer Frequency
+Customer Frequency = 
+CALCULATE(
+    DISTINCTCOUNT('Sales'[Invoice]),
+    ALLEXCEPT('Sales', 'Sales'[Customer ID])
+)
+
+-- Average Monthly Sales
+Average Monthly Sales =
+AVERAGEX(
+    VALUES('Sales'[MonthNumber]),
+    [Total Revenue]
+)
+
+=======================================
+END OF FILE
+=======================================

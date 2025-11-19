@@ -1,0 +1,87 @@
+# ============================
+# PROJECT: FUTURE_DS_01
+# POWER BI + DATA ANALYTICS
+# ============================
+
+# ----------------------------
+# POWER BI FILES & TEMP DATA
+# ----------------------------
+*.pbip            # PBIP project format
+*.pbir            # Report file
+*.pbi             # Semantic model
+*.pbit            # Power BI template
+*.dat             # Power BI cache
+*.tmp             # Temp files
+*.bak             # Backup files
+*.abf             # Analysis Services backup files
+
+# Power BI local cache folders
+**/.pbi/
+**/DataMashup/
+**/DataModel/
+**/Backup/
+
+# ----------------------------
+# DATA FILES
+# ----------------------------
+# Ignore raw/cached files except intentional data
+*.csv.tmp
+*.xlsx.tmp
+*.xls.tmp
+*.zip
+*.7z
+
+# Allow your project datasets
+!data/*.csv
+!data/*.xlsx
+
+# ----------------------------
+# PYTHON & NOTEBOOK FILES
+# ----------------------------
+*.ipynb_checkpoints
+__pycache__/
+*.pyc
+*.pyo
+
+# ----------------------------
+# OFFICE / DOCUMENT FILES (TEMP)
+# ----------------------------
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# ----------------------------
+# SYSTEM / OS FILES
+# ----------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ----------------------------
+# LOGS & CACHE FILES
+# ----------------------------
+*.log
+*.cache
+*.tmp
+
+# ----------------------------
+# VS CODE / EDITOR FILES
+# ----------------------------
+.vscode/
+.history/
+.idea/
+*.swp
+
+# ----------------------------
+# EXPORTS / REPORT OUTPUTS
+# (PDFs allowed if needed)
+# ----------------------------
+# Ignore temporary export copies
+outputs/*.tmp
+
+# Allow final PDF exports
+!outputs/*.pdf
+
+# Screenshots folder allowed
+!screenshots/*
